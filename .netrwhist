@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home1/jinchul.kim/android/msm8974_kk_release/android/vendor/lge/apps'
+let g:netrw_dirhist_2='/home1/jinchul.kim/android/msm8974_kk_release/android/vendor/lge/apps/SlideAside'
+let g:netrw_dirhist_3='/home1/jinchul.kim/android/lap_kk_splitwindow/android/vendor/lge/frameworks/core/java/android/view'
+let g:netrw_dirhist_4='/home1/jinchul.kim/android/msm8974_kk_release/android/frameworks/base/core/java/android/app'
+let g:netrw_dirhist_5='/home1/jinchul.kim/android/msm8974_kk_release/android/vendor/lge/frameworks/splitwindow/java'
+let g:netrw_dirhist_6='/home1/jinchul.kim/android/msm8974_kk_release/android/vendor/lge/frameworks/splitwindow'
