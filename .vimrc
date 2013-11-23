@@ -237,11 +237,11 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'minibufexpl.vim'
+Bundle 'javacomplete'
+Bundle 'AutoComplPop'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (ie. when working on your own plugin)
-Bundle 'javacomplete'
-Bundle 'AutoComplPop'
 " ...
 
 filetype plugin indent on     " required!
