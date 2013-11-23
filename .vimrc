@@ -239,6 +239,7 @@ Bundle 'FuzzyFinder'
 Bundle 'minibufexpl.vim'
 Bundle 'javacomplete'
 Bundle 'AutoComplPop'
+Bundle 'Tagbar'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (ie. when working on your own plugin)
