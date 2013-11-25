@@ -186,6 +186,9 @@ func! FUNC_dos2unix()
 endfunc
 nmap  <LocalLeader>unix :call FUNC_dos2unix()<cr>
 
+" change Pmenu color.
+hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff
+
 "==============================================================================="
 " FuzzyFile
 "-------------------------------------------------------------------------------"
