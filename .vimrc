@@ -186,6 +186,9 @@ func! FUNC_dos2unix()
 endfunc
 nmap  <LocalLeader>unix :call FUNC_dos2unix()<cr>
 
+" change Pmenu color.
+hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff
+
 "==============================================================================="
 " FuzzyFile
 "-------------------------------------------------------------------------------"
@@ -239,6 +242,7 @@ Bundle 'FuzzyFinder'
 Bundle 'minibufexpl.vim'
 Bundle 'javacomplete'
 Bundle 'AutoComplPop'
+Bundle 'Tagbar'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (ie. when working on your own plugin)
