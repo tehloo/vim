@@ -1,24 +1,28 @@
 [submodule "FuzzyFinder"]
-	path = bundle/FuzzyFinder
-	url = git://github.com/vim-scripts/FuzzyFinder.git
+    path = bundle/FuzzyFinder
+    url = git://github.com/vim-scripts/FuzzyFinder.git
     ignore = dirty
 [submodule "L9"]
-	path = bundle/L9
+    path = bundle/L9
     url = git://github.com/vim-scripts/L9.git
     ignore = dirty
 [submodule "javacomplete"]
-	path = bundle/javacomplete
+    path = bundle/javacomplete
     url = git://github.com/vim-scripts/javacomplete.git
     ignore = dirty
 [submodule "vundle"]
-	path = bundle/vundle
+    path = bundle/vundle
     url = git://github.com/gmarik/vundle.git
     ignore = dirty
-[submodule "bundle/AutoComplPop"]
-	path = bundle/AutoComplPop
-	url = git://github.com/vim-scripts/AutoComplPop.git
+[submodule "AutoComplPop"]
+    path = bundle/AutoComplPop
+    url = git://github.com/vim-scripts/AutoComplPop.git
     ignore = dirty
-[submodule "bundle/Tagbar"]
-	path = bundle/Tagbar
-	url = git://github.com/vim-scripts/Tagbar.git
+[submodule "Tagbar"]
+    path = bundle/Tagbar
+    url = git://github.com/vim-scripts/Tagbar.git
+    ignore = dirty
+[submodule "taglist.vim"]
+    path = bundle/taglist.vim
+    url = git://github.com/vim-scripts/taglist.vim.git
     ignore = dirty
