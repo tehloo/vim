@@ -22,7 +22,11 @@
     path = bundle/Tagbar
     url = git://github.com/vim-scripts/Tagbar.git
     ignore = dirty
-[submodule "taglist.vim"]
-    path = bundle/taglist.vim
-    url = git://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/taglist.vim"]
+	path = bundle/taglist.vim
+	url = git://github.com/vim-scripts/taglist.vim.git
+    ignore = dirty
+[submodule "bundle/minibufexpl.vim"]
+	path = bundle/minibufexpl.vim
+	url = git://github.com/vim-scripts/minibufexpl.vim.git
     ignore = dirty
