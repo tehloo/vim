@@ -206,7 +206,8 @@ noremap <F3> :FufTagWithCursorWord!<CR>
 " tagvar plugin settings
 "-------------------------------------------------------------------------------"
 nnoremap <silent> <F9>hh :help my_tag<CR>
-nnoremap <silent> <F9> :TagbarToggle<CR>
+"nnoremap <silent> <F9> :TagbarToggle<CR>
+nnoremap <silent> <F9> :TlistToggle<CR>
 
 "==============================================================================="
 "" minibufexpl
@@ -215,6 +216,12 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1 
 let g:miniBufExplMapCTabSwitchBufs = 1 
 let g:miniBufExplModSelTarget = 1 
+
+"==============================================================================="
+"" split window resize
+"-------------------------------------------------------------------------------"
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 "==============================================================================="
 "" Vundle
@@ -243,6 +250,7 @@ Bundle 'minibufexpl.vim'
 Bundle 'javacomplete'
 Bundle 'AutoComplPop'
 Bundle 'Tagbar'
+Bundle 'taglist.vim'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (ie. when working on your own plugin)
