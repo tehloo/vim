@@ -15,7 +15,7 @@ let g:vim_root_path = s:VIMRC_PATH . s:VIM_PATH
 
 if 1 "android setting
 "==============================================================================="
-function! FUNC_FindRoot()
+function! FUNC_FindAndroidRoot()
     let cur_dir = getcwd()
     if 0 "android full source setting
         let temp_dir = cur_dir
@@ -33,11 +33,25 @@ function! FUNC_FindRoot()
     return cur_dir
 endfunction
 
-let g:RootDir=FUNC_FindRoot() 
-let g:include_files='*.c, *.cpp, *.java, *.mk, *.sh, *.xml' 
+function! FUNC_FindProjectRoot()
+    let cur_dir = getcwd()
+    while cur_dir != "/"
+        let dir_to_check = cur_dir . '/.git'
+"        echo 'check ' . dir_to_check .' :' . isdirectory(dir_to_check)
+        if isdirectory(dir_to_check)
+            return cur_dir
+        endif
+        cd ..
+        let cur_dir = getcwd()
+    endwhile
+    echo 'rootDir is ' . cur_dir
+endfunction
+
+let g:RootDir=FUNC_FindProjectRoot()
+let g:include_files='*.c, *.cpp, *.java, *.mk, *.sh, *.xml'
 let g:exclude_dirs='.repo, .git, .svn, .cache, out_*'
 let g:exclude_files='*.obj, *.o, *.class, *.jar, *.so, *.js, *.html, *~'
-endif 
+endif
 set number
 
 
@@ -70,6 +84,7 @@ nmap <F12>0 :tn<cr>
 "set tags=tags,TAGS,$PWD/tags,$HOME/.vim/tags
 set tags=./tags,./TAGS
 execute "set tags+=".g:RootDir."/tags"
+"echo "get tags ".g:RootDir."/tags"
 "set tags+=$HOME/.vim/tags
 "set tags+=FUNC_ctags_create()
 
@@ -154,8 +169,7 @@ set autoindent "자동 indent in newline"
 set cindent "c일때 자동 indent"
 set cinoptions=:0,g0,(0,l1,t0
 set nofoldenable "not folding"
-    
-"
+
 "editing
 "=============================================================================="
 set hidden "새로운 buffer를 열기전에 이전 buffer를 반드시 저장하지v않아도(hidden) 된다
@@ -171,13 +185,20 @@ set tabstop=4 "tab key를 4width로 조정"
 set shiftwidth=4 "auto indentation시 width"
 set softtabstop=0
 
-" toggle paste mode, when you copy text from external clipboard, and paste, ban cascading indentation
+"toggle paste mode, when you copy text from external clipboard, and paste, ban cascading indentation
 set pastetoggle=<Ins>
 "nmap <LocalLeader>pp :set pastetoggle<cr>
 
 " when you open root previledged file, and save please use w!!
 cmap w!! w !sudo tee % >/dev/null
 
+"hightlight spaces end of the line.
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+"remove extra whitespaces when it saves.
+autocmd FileType c,cpp,java autocmd BufWritePre <buffer> :%s/\s\+$//e
+"autocmd BufWritePre *.java :%s/\s\+$//e
 
 "unix format으로 변경하고,"trailing space 지우기
 func! FUNC_dos2unix()
@@ -212,10 +233,10 @@ nnoremap <silent> <F9> :TlistToggle<CR>
 "==============================================================================="
 "" minibufexpl
 "-------------------------------------------------------------------------------"
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1 
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
 
 "==============================================================================="
 "" split window resize
