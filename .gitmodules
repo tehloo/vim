@@ -1,3 +1,6 @@
+[submodule "vundle"]
+	path = bundle/vundle
+	url = git://github.com/gmarik/vundle.git
 [submodule "FuzzyFinder"]
     path = bundle/FuzzyFinder
     url = git://github.com/vim-scripts/FuzzyFinder.git
@@ -9,10 +12,6 @@
 [submodule "javacomplete"]
     path = bundle/javacomplete
     url = git://github.com/vim-scripts/javacomplete.git
-    ignore = dirty
-[submodule "vundle"]
-    path = bundle/vundle
-    url = git://github.com/gmarik/vundle.git
     ignore = dirty
 [submodule "AutoComplPop"]
     path = bundle/AutoComplPop
