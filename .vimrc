@@ -214,14 +214,15 @@ hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff
 " FuzzyFile
 "-------------------------------------------------------------------------------"
 map <Leader>fc :FufCoverageFile!<CR>
-"map <Leader>ff :FufFile **/<CR>
-map <F2> :FufFile **/<CR>
+map <Leader>ff :FufFile **/<CR>
+map <Leader>ft :FufTag!<CR>
+"map <F2> :FufFile **/<CR>
 map <Leader>fb :FufBuffer!<CR>
-map <Leader>fd :FufDir!<CR>
+"map <Leader>fd :FufDir!<CR>
 
-" 파일명 탐색시 제외할 파일 이름 패턴 지정
+"let g:fuf_coveragefile_globPatterns = ['g:RootDir/**/']
 let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|class|html)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-noremap <F3> :FufTagWithCursorWord!<CR>
+"noremap <F3> :FufTagWithCursorWord!<CR>
 
 "==============================================================================="
 " tagvar plugin settings
