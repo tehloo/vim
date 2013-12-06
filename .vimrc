@@ -197,7 +197,7 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
 "remove extra whitespaces when it saves.
-autocmd FileType c,cpp,java autocmd BufWritePre <buffer> :%s/\s\+$//e
+"autocmd FileType c,cpp,java autocmd BufWritePre <buffer> :%s/\s\+$//e
 "autocmd BufWritePre *.java :%s/\s\+$//e
 
 "unix format으로 변경하고,"trailing space 지우기
@@ -223,6 +223,7 @@ map <Leader>fb :FufBuffer!<CR>
 "let g:fuf_coveragefile_globPatterns = ['g:RootDir/**/']
 let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|class|html)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
 "noremap <F3> :FufTagWithCursorWord!<CR>
+map <Leader>fT :FufTagWithCursorWord!<CR>
 
 "==============================================================================="
 " tagvar plugin settings
@@ -273,8 +274,9 @@ Bundle 'javacomplete'
 Bundle 'AutoComplPop'
 Bundle 'Tagbar'
 Bundle 'taglist.vim'
+Bundle 'BufOnly.vim'
 " non github repos
-Bundle 'git://git.wincent.com/command-t.git'
+"Bundle 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (ie. when working on your own plugin)
 " ...
 
