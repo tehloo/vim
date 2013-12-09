@@ -20,10 +20,10 @@ function! FUNC_FindAndroidRoot()
     if 0 "android full source setting
         let temp_dir = cur_dir
         while temp_dir != "/"
-            if filereadable(temp_dir . "/build/envsetup.sh") 
-                return temp_dir 
-            elseif filereadable(temp_dir . "/../android/build/envsetup.sh") 
-                return temp_dir 
+            if filereadable(temp_dir . "/build/envsetup.sh")
+                return temp_dir
+            elseif filereadable(temp_dir . "/../android/build/envsetup.sh")
+                return temp_dir
             else
                 cd ..
                 let temp_dir = getcwd()
@@ -72,7 +72,7 @@ nmap <F12> <C-]>
 nmap <F12>s :ltag /^<C-R>=expand("<cword>")<CR>$
 
 "setting for view
-"definition preview in horizontal/vertical/tab 
+"definition preview in horizontal/vertical/tab
 nmap <F12>v <C-W><C-]>
 nmap <F12>vv :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <F12>vt :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -199,6 +199,10 @@ match ExtraWhitespace /\s\+$/
 "remove extra whitespaces when it saves.
 "autocmd FileType c,cpp,java autocmd BufWritePre <buffer> :%s/\s\+$//e
 "autocmd BufWritePre *.java :%s/\s\+$//e
+func! FUNC_RemoveExtraWhitespace()
+    %s/\s\+$//e
+endfunc
+nmap <Leader>rw :call FUNC_RemoveExtraWhitespace()<cr>
 
 "unix format으로 변경하고,"trailing space 지우기
 func! FUNC_dos2unix()
