@@ -235,10 +235,10 @@ nnoremap <silent> <F9> :TlistToggle<CR>
 "==============================================================================="
 "" minibufexpl
 "-------------------------------------------------------------------------------"
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplModSelTarget = 1
 
 "==============================================================================="
 "" split window resize
@@ -269,7 +269,7 @@ Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-Bundle 'minibufexpl.vim'
+"Bundle 'minibufexpl.vim'
 Bundle 'javacomplete'
 Bundle 'AutoComplPop'
 Bundle 'Tagbar'
