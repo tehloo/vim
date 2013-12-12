@@ -55,8 +55,13 @@ let g:include_files='*.c, *.cpp, *.java, *.mk, *.sh, *.xml'
 let g:exclude_dirs='.repo, .git, .svn, .cache, out_*'
 let g:exclude_files='*.obj, *.o, *.class, *.jar, *.so, *.js, *.html, *~'
 endif
-set number
 
+"
+"Extra settings for vim
+"
+set number
+set statusline+=%F  "show full path for current editing file.
+set laststatus=2    "and show it permanantly.
 
 if 1
 "==============================================================================="
