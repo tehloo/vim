@@ -35,6 +35,7 @@ endfunction
 
 function! FUNC_FindProjectRoot()
     let cur_dir = getcwd()
+    let org_dir = cur_dir
     while cur_dir != "/"
         let dir_to_check = cur_dir . '/.git'
 "        echo 'check ' . dir_to_check .' :' . isdirectory(dir_to_check)
@@ -44,7 +45,9 @@ function! FUNC_FindProjectRoot()
         cd ..
         let cur_dir = getcwd()
     endwhile
-    echo 'rootDir is ' . cur_dir
+    let cur_dir = org_dir
+"    echo 'rootDir is ' . cur_dir
+    return cur_dir
 endfunction
 
 let g:RootDir=FUNC_FindProjectRoot()
