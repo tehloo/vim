@@ -41,6 +41,9 @@ function! FUNC_FindProjectRoot()
         if isdirectory(dir_to_check)
             return cur_dir
         endif
+        if filereadable(cur_dir . "/tags")
+            return cur_dir
+        endif
         cd ..
         let cur_dir = getcwd()
     endwhile
