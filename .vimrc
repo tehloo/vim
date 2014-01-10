@@ -237,6 +237,7 @@ map <Leader>fb :FufBuffer!<CR>
 
 "let g:fuf_coveragefile_globPatterns = ['g:RootDir/**/']
 let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|class|html)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
+let g:fuf_file_exclude = '\v\~$|\.o$|\.exe$|\.bak$|\.swp$|\.class$'
 "noremap <F3> :FufTagWithCursorWord!<CR>
 map <Leader>fT :FufTagWithCursorWord!<CR>
 
