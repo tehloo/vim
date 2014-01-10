@@ -103,7 +103,7 @@ execute "set tags+=".g:RootDir."/tags"
 "generate absolute path to using ctags at any directory"
     func! FUNC_ctags_create()
         exe "!echo [ctag will be created, enter to continue, or Ctrl-C]"
-        exe "!$HOME/.vim/myctags.sh" g:RootDir
+        exe "!$HOME/.vim/bin/ctagsHere.sh" g:RootDir
     endfunc
 
     func! FUNC_ctags_search()
