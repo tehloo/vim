@@ -121,6 +121,17 @@ filetype on
 filetype plugin on "filetype에 따라 plugin이 동작해라
 filetype indent on "indentation도 마찬가지
 
+"set omnifunc=syntaxcomplete#Complete
+
+
+"javacomplete
+""=============================================================================="
+if has("autocmd")
+    autocmd FileType java setlocal omnifunc=javacomplete#Complete
+endif
+inoremap <buffer> <C-X><C-U> <C-X><C-U><C-P>
+inoremap <buffer> <C-S-Space> <C-X><C-U><C-P>
+
 "environments
 ""=============================================================================="
 set matchpairs+=<:> "{},[],()
@@ -163,6 +174,13 @@ set ignorecase
 ""search pattern이 모두 소문자이면 실제 검색시 대소문자 구별 안한다.
 "만약 구별을 해야 한다면 xxx search시 /\Cxxx로 검색해라
 set smartcase
+
+"grepping
+""=============================================================================="
+:nnoremap gr :grep <cword> *<CR>
+:nnoremap Gr :grep <cword> %:p:h/*<CR>
+:nnoremap gR :grep '\b<cword>\b' *<CR>
+:nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
 
 
 "autoe complete
@@ -286,7 +304,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
+"Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
