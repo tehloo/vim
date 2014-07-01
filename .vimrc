@@ -233,6 +233,11 @@ func! FUNC_RemoveExtraWhitespace()
 endfunc
 nmap <Leader>rw :call FUNC_RemoveExtraWhitespace()<cr>
 
+func! FUNC_ReplaceTapToWhitespace()
+    %s/\t/    /g
+endfunc
+nmap <Leader>tw :call FUNC_ReplaceTapToWhitespace()<cr>
+
 "unix format으로 변경하고,"trailing space 지우기
 func! FUNC_dos2unix()
     %s/^M//g
