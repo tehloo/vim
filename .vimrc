@@ -54,6 +54,7 @@ function! FUNC_FindProjectRoot()
 endfunction
 
 let g:RootDir=FUNC_FindProjectRoot()
+echo 'rootDir is ' . RootDir
 let g:include_files='*.c, *.cpp, *.java, *.mk, *.sh, *.xml'
 let g:exclude_dirs='.repo, .git, .svn, .cache, out_*'
 let g:exclude_files='*.obj, *.o, *.class, *.jar, *.so, *.js, *.html, *~'
@@ -256,9 +257,9 @@ map <Leader>ff :FufFile **/<CR>
 map <Leader>ft :FufTag!<CR>
 "map <F2> :FufFile **/<CR>
 map <Leader>fb :FufBuffer!<CR>
-"map <Leader>fd :FufDir!<CR>
+map <Leader>fd :FufDir!<CR>
 
-"let g:fuf_coveragefile_globPatterns = ['g:RootDir/**/']
+let g:fuf_coveragefile_globPatterns = [g:RootDir.'/**/*.java']
 let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|class|html)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
 let g:fuf_file_exclude = '\v\~$|\.o$|\.exe$|\.bak$|\.swp$|\.class$'
 "noremap <F3> :FufTagWithCursorWord!<CR>
