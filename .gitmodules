@@ -29,6 +29,3 @@
 	path = bundle/minibufexpl.vim
 	url = git://github.com/vim-scripts/minibufexpl.vim.git
     ignore = dirty
-[submodule "bundle/vundle"]
-	path = bundle/vundle
-	url = git://github.com/gmarik/vundle.git
