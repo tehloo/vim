@@ -54,7 +54,7 @@ function! FUNC_FindProjectRoot()
 endfunction
 
 let g:RootDir=FUNC_FindProjectRoot()
-echo 'rootDir is ' . RootDir
+"echo 'rootDir is ' . RootDir
 let g:include_files='*.c, *.cpp, *.java, *.mk, *.sh, *.xml'
 let g:exclude_dirs='.repo, .git, .svn, .cache, out_*'
 let g:exclude_files='*.obj, *.o, *.class, *.jar, *.so, *.js, *.html, *~'
