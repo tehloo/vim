@@ -286,11 +286,18 @@ let Tlist_WinWidth = 60
 "let g:miniBufExplModSelTarget = 1
 
 "==============================================================================="
+"" NERDTree
+"-------------------------------------------------------------------------------"
+map <Leader>nt <ESC>:NERDTree<CR>
+
+"==============================================================================="
 "" split window resize
 "-------------------------------------------------------------------------------"
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
+nnoremap <silent> <Leader>< :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <Leader>> :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 "==============================================================================="
 "" Vundle
 "-------------------------------------------------------------------------------"
@@ -320,6 +327,9 @@ Bundle 'AutoComplPop'
 Bundle 'Tagbar'
 Bundle 'taglist.vim'
 Bundle 'BufOnly.vim'
+
+Plugin 'ctrlp.vim'
+Plugin 'The-NERD-tree'
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (ie. when working on your own plugin)
