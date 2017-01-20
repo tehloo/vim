@@ -286,9 +286,15 @@ let Tlist_WinWidth = 60
 "let g:miniBufExplModSelTarget = 1
 
 "==============================================================================="
+"" ctrlp
+"-------------------------------------------------------------------------------"
+let g:ctrlp_max_files=0
+
+"==============================================================================="
 "" NERDTree
 "-------------------------------------------------------------------------------"
 map <Leader>nt <ESC>:NERDTree<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 "==============================================================================="
 "" split window resize
@@ -296,8 +302,8 @@ map <Leader>nt <ESC>:NERDTree<CR>
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
-nnoremap <silent> <Leader>< :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
-nnoremap <silent> <Leader>> :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+nnoremap <silent> <Leader>< :exe "vertical resize " . (winwidth(0) * 6/5)<CR>
+nnoremap <silent> <Leader>> :exe "vertical resize " . (winwidth(0) * 4/5)<CR>
 "==============================================================================="
 "" Vundle
 "-------------------------------------------------------------------------------"
