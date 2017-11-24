@@ -306,6 +306,12 @@ nnoremap <silent> <Leader>< :exe "vertical resize " . (winwidth(0) * 6/5)<CR>
 nnoremap <silent> <Leader>> :exe "vertical resize " . (winwidth(0) * 4/5)<CR>
 "==============================================================================="
 "" Vundle
+
+"  Need some work
+"  $ git clone https://github.com/VundleVim/Vundle.vim.git
+"  ~/.vim/bundle/vundle
+"
+"  and restart vim
 "-------------------------------------------------------------------------------"
 set nocompatible               " be iMproved
 filetype off                   " required!
