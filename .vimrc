@@ -12,6 +12,8 @@ let g:vim_root_path = s:VIMRC_PATH . s:VIM_PATH
 "let mapleader=','
 "let maplocalleader=','
 
+" shorten the message as notice
+set shortmess=a
 
 if 1 "android setting
 "==============================================================================="
@@ -40,9 +42,11 @@ function! FUNC_FindProjectRoot()
         let dir_to_check = cur_dir . '/.git'
 "        echo 'check ' . dir_to_check .' :' . isdirectory(dir_to_check)
         if isdirectory(dir_to_check)
+"            echo 'rootDir as git is ' . cur_dir
             return cur_dir
         endif
         if filereadable(cur_dir . "/tags")
+"            echo 'rootDir as ctags is ' . cur_dir
             return cur_dir
         endif
         cd ..
@@ -54,7 +58,7 @@ function! FUNC_FindProjectRoot()
 endfunction
 
 let g:RootDir=FUNC_FindProjectRoot()
-"echo 'rootDir is ' . RootDir
+silent !echo 'rootDir is ' . RootDir
 let g:include_files='*.c, *.cpp, *.java, *.mk, *.sh, *.xml'
 let g:exclude_dirs='.repo, .git, .svn, .cache, out_*'
 let g:exclude_files='*.obj, *.o, *.class, *.jar, *.so, *.js, *.html, *~'
@@ -136,7 +140,7 @@ inoremap <buffer> <C-S-Space> <C-X><C-U><C-P>
 "environments
 ""=============================================================================="
 set matchpairs+=<:> "{},[],()
-set ttymouse=xterm
+"set ttymouse=xterm
 set ttyfast "fast terminal transfer
 
 set mouse=a ""use the mouse in all modes
@@ -269,7 +273,7 @@ map <Leader>fT :FufTagWithCursorWord!<CR>
 " tagvar plugin settings
 "-------------------------------------------------------------------------------"
 nnoremap <silent> <F9>hh :help my_tag<CR>
-"nnoremap <silent> <F9> :TagbarToggle<CR>
+"nnoremap <silent> <F8> :TagbarToggle<CR>
 nnoremap <silent> <F9> :TlistToggle<CR>
 
 "==============================================================================="
@@ -326,17 +330,17 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-Bundle 'tpope/vim-fugitive'
+"Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
 "Bundle 'minibufexpl.vim'
-Bundle 'javacomplete'
+"Bundle 'javacomplete'
 Bundle 'AutoComplPop'
-Bundle 'Tagbar'
+"Bundle 'Tagbar
 Bundle 'taglist.vim'
 Bundle 'BufOnly.vim'
 
